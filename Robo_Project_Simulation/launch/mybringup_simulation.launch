@@ -1,0 +1,22 @@
+<!-- launch file to open gazebo simulator, and amcl for navigating to a point -->
+
+<launch>
+    <param name="/use_sim_time" value="false"/>
+
+    <!-- include gazebo turtlebot launch with world -->
+    <include file = "$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+        <arg name = "world_file" value = "/home/gopikrishna/Documents/ROS/worlds/labnew" />
+    </include>
+
+    <!-- include amcl demo of turtlebot_gazebo -->
+    <include file = "$(find turtlebot_gazebo)/launch/amcl_demo.launch">
+        <arg name = "map_file" value="/home/gopikrishna/Documents/ROS/worlds/labnew_gazebo.yaml" />
+    </include>
+
+    <!-- include rviz -->
+    <include file = "$(find turtlebot_rviz_launchers)/launch/view_navigation.launch">
+    </include>
+
+    
+    
+</launch>

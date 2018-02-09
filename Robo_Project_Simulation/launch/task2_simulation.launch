@@ -1,0 +1,27 @@
+<!-- launch file for second task, to localize the AR markers and go to one marker -->
+
+<launch>
+    <param name="/use_sim_time" value="false"/>
+
+    <!-- include AR tracker launch file -->
+    <include file = "$(find robo_project_simulation)/launch/ar_tracker.launch" />
+
+    <!-- start localization node -->
+    <node pkg="robo_project_simulation" name="my_localization" type="localization.py" output="screen">
+        <rosparam>
+            tag_ids: [0,1]
+        </rosparam>
+    </node>
+
+    <!-- start rotate node -->
+    <node pkg="robo_project_simulation" name="my_rotate" type="rotate.py">
+    </node>
+
+    <!-- start goToTarget node -->
+    <node pkg="robo_project_simulation" name="my_gototarget" type="goToTarget.py">
+    </node>
+
+    <!-- start goal status node -->
+    <node pkg="robo_project_simulation" name="my_goalStatus" type="goalStatus.py">
+    </node>
+</launch>

@@ -1,0 +1,14 @@
+<!-- launch file for task1, to open rviz and navigating to a point -->
+
+<launch>   
+
+    <param name="/use_sim_time" value="false"/>
+
+        <!-- start goToPoint node to go to center of map -->
+    <node pkg = "robo_project_simulation" name = "my_goToPoint" type = "goToPoint.py">
+    </node> 
+
+
+
+</launch>
+
