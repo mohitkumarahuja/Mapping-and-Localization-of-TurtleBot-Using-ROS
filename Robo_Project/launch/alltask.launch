@@ -1,0 +1,40 @@
+<!-- launch file for task1, to open rviz and navigating to a point -->
+
+<launch>   
+
+        <!-- include AR tracker launch file -->
+    <include file = "$(find robo_project)/launch/ar_tracker.launch" /> 
+
+        <!-- start goToPoint node to go to center of map -->
+    <node pkg = "robo_project" name = "my_goToPoint" type = "goToPointNew.py">
+    </node> 
+
+        <!-- start localization node -->
+    <node pkg="robo_project" name="my_localization" type="localization.py" output="screen">
+        <rosparam>
+            tag_ids: [0,1]
+        </rosparam>
+    </node>
+
+    <!-- start rotate node -->
+    <node pkg="robo_project" name="my_rotate" type="rotate.py">
+    </node>
+
+    <!-- start goToTarget node -->
+    <node pkg="robo_project" name="my_gototarget" type="goToTarget.py">
+    </node>
+
+    <!-- start goal status node -->
+    <node pkg="robo_project" name="my_goalStatus" type="goalStatus.py">
+    </node>
+
+    <!-- start drop node -->
+    <node pkg="robo_project" name="my_gototarget1" type="goToTarget1.py">
+    </node>
+
+    <!-- start goal status node 2 -->
+    <node pkg="robo_project" name="my_goalStatus2" type="goalStatus1.py">
+    </node>
+
+
+</launch>

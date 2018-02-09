@@ -1,0 +1,15 @@
+<!-- launch file bringup turtlebot, and amcl for navigating to a point -->
+
+<launch>
+
+    <!-- include gazebo turtlebot launch with world -->
+    <include file = "$(find turtlebot_bringup)/launch/minimal.launch">
+    </include>
+
+    <!-- include amcl demo of turtlebot_gazebo -->
+    <include file = "$(find robo_project)/launch/amcl_demo.launch">
+        <arg name = "map_file" value="/tmp/labmap.yaml" />
+    </include>
+
+    
+</launch>
