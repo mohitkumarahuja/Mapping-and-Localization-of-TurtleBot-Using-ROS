@@ -67,7 +67,7 @@ AR marker used :
 
 6. Navigate around the world and build the map
 
-7. After complete mapping, save the map using below code , run *on the turtlkebot*
+7. After complete mapping, save the map using below code , run *on the turtlebot*
 
 `rosrun map_server map_saver -f /tmp/my_map`
 
